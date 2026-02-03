@@ -1,0 +1,129 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  --accent: #e50914;
+  --text-color: #fff;
+  --radius: 20px;
+  --transition: 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-gradient);
+  overflow: hidden;
+  font-family: "Poppins", Arial, sans-serif;
+  position: relative;
+}
+
+/* Bouton musique en haut à gauche */
+#music-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 14px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background var(--transition), transform 0.2s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+#music-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.invitation-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  color: var(--text-color);
+  animation: fadeIn 1.2s ease;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#question {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+  font-weight: bold;
+}
+
+#yes {
+  background: #ff477e;
+  color: white;
+}
+
+#yes:hover {
+  transform: scale(1.1);
+  background: #ff2f6e;
+}
+
+#no {
+  background: #fff;
+  color: #333;
+  position: relative;
+}
+
+#no:hover {
+  background: #f0f0f0;
+}
+
+/* Petits cœurs flottants */
+#hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -10px;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.4rem;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}

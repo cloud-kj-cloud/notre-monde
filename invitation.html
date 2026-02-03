@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veux-tu être ma Valentine 💌</title>
+  <link rel="stylesheet" href="invitation.css">
+</head>
+<body>
+
+  <!-- Musique de fond -->
+  <audio id="bg-music" loop>
+    <source src="assets/audio/music.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas la lecture audio.
+  </audio>
+
+  <!-- Bouton musique -->
+  <button id="music-btn" aria-label="Activer ou couper la musique">🎵</button>
+
+  <div class="invitation-container">
+    <h1 id="question">💞 Veux-tu être ma Valentine ? 💞</h1>
+
+    <div class="buttons">
+      <button id="yes">Oui 💖</button>
+      <button id="no">Non 😅</button>
+    </div>
+  </div>
+
+  <!-- Conteneur des cœurs -->
+  <div id="hearts"></div>
+
+  <script src="invitation.js" defer></script>
+</body>
+</html>

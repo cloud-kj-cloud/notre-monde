@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accès Privé</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div class="card">
+    <h2>Accès Privé 🔒</h2>
+    <p>Entre le code secret</p>
+
+    <div class="input-wrapper">
+      <input 
+        type="password" 
+        id="code" 
+        placeholder="Code secret"
+        aria-label="Entrer le code d’accès"
+      />
+      <button 
+        id="toggle-visibility" 
+        type="button" 
+        aria-label="Afficher ou masquer le code"
+      >👁️</button>
+    </div>
+
+    <button id="enter-btn">Entrer</button>
+    <p id="msg" role="alert" aria-live="polite"></p>
+  </div>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
+

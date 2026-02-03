@@ -1,0 +1,234 @@
+/* Variables CSS */
+:root {
+    --primary-color: #ce2819; /* Rouge vif */
+    --secondary-color: #696e70; /* Gris foncé */
+    --text-color: #e0c4c4;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Réinitialisation de base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding-bottom: 60px; /* Espace pour le footer si fixe */
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 2rem;
+}
+
+.main-header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Sections générales */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Bouton Musique */
+.audio-player-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.music-toggle-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-light);
+}
+
+.music-toggle-btn:hover {
+    background-color: darken(var(--secondary-color), 10%); /* Nécessite un préprocesseur ou une couleur fixe */
+    transform: translateY(-2px);
+}
+
+.music-toggle-btn i {
+    font-size: 1.2rem;
+}
+
+/* Galerie Style Netflix */
+.gallery-section {
+    margin-bottom: 3rem;
+}
+
+.gallery-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.gallery-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    width: 100%; /* S'assure que la carte prend la pleine largeur de sa colonne */
+    padding-bottom: 75%; /* Ratio 4:3 pour l'image */
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
+    display: block;
+}
+
+
+/* Projets Style Apple */
+.projects-section {
+    margin-bottom: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, #f0f0f0 100%);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    position: relative; /* Ou 'fixed' au bas si vous voulez un footer collant */
+    bottom: 0;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .gallery-row, .projects-grid {
+        grid-template-columns: 1fr; /* Une colonne sur petits écrans */
+    }
+
+    .gallery-card {
+        padding-bottom: 60%; /* Ajuste le ratio pour les petits écrans si nécessaire */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .music-toggle-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
