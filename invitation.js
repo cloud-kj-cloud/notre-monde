@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   yesBtn.addEventListener('click', () => {
     for (let i = 0; i < 25; i++) createHeart();
     setTimeout(() => {
-      window.location.href = "index.html"; // Page d’accès
+      window.location.href = "access.html"; // Page d’accès
     }, 1800);
   });
 
@@ -56,3 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cœurs constants en fond
   setInterval(createHeart, 700);
 });
+
